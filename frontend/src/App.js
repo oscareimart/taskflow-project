@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <div>
+      <img src="/image.png" alt="Imagen prueba" />
       <Login />
       <Register />
       <Dashboard />
