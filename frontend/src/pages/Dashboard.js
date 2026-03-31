@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../services/api";
+import "../App.css";
 
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
@@ -40,7 +41,9 @@ function Dashboard() {
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Nueva Tarea"
       />
-      <button onClick={createTask}>Agregar</button>
+      <button className="btn" onClick={createTask}>
+        Agregar
+      </button>
       <ul>
         {tasks.map((task) => (
           <li key={task._id}>
@@ -48,13 +51,19 @@ function Dashboard() {
             {editingID === task._id ? (
               <>
                 <input onChange={(e) => setTitle(e.target.value)} />
-                <button onClick={() => updateTask(task._id)}>Guardar</button>
+                <button className="btn" onClick={() => updateTask(task._id)}>
+                  Guardar
+                </button>
               </>
             ) : (
               <>
                 {task.title}
-                <button onClick={() => setEditingID(task._id)}>Editar</button>
-                <button onClick={() => deleteTask(task._id)}>Eliminar</button>
+                <button className="btn" onClick={() => setEditingID(task._id)}>
+                  Editar
+                </button>
+                <button className="btn" onClick={() => deleteTask(task._id)}>
+                  Eliminar
+                </button>
               </>
             )}
           </li>
