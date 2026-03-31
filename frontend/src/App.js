@@ -8,13 +8,13 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 function App() {
   return (
-    <div>
+    <main>
       <Login />
       <Register />
       <Suspense fallback={<h2> Cargando... </h2>}>
         <Dashboard />
       </Suspense>
-    </div>
+    </main>
   );
 }
 

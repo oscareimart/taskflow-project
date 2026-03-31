@@ -34,7 +34,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="p-5">
+    <div>
       <h2>Dashboard</h2>
       <input
         value={title}
