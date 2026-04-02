@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 app.use(
-  express.static("public", {
+  express.static("build", {
     maxAge: "1y",
   }),
 );
