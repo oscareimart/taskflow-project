@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import API from "../services/api";
-import "../App.css";
+
+const stylesBtn = {
+  padding: "12px 16px",
+  marginTop: "10px",
+  fontSize: "16px",
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer",
+};
 
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
@@ -41,7 +49,7 @@ function Dashboard() {
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Nueva Tarea"
       />
-      <button className="btn" onClick={createTask}>
+      <button style={stylesBtn} onClick={createTask}>
         Agregar
       </button>
       <ul>
@@ -51,17 +59,20 @@ function Dashboard() {
             {editingID === task._id ? (
               <>
                 <input onChange={(e) => setTitle(e.target.value)} />
-                <button className="btn" onClick={() => updateTask(task._id)}>
+                <button style={stylesBtn} onClick={() => updateTask(task._id)}>
                   Guardar
                 </button>
               </>
             ) : (
               <>
                 {task.title}
-                <button className="btn" onClick={() => setEditingID(task._id)}>
+                <button
+                  style={stylesBtn}
+                  onClick={() => setEditingID(task._id)}
+                >
                   Editar
                 </button>
-                <button className="btn" onClick={() => deleteTask(task._id)}>
+                <button style={stylesBtn} onClick={() => deleteTask(task._id)}>
                   Eliminar
                 </button>
               </>
